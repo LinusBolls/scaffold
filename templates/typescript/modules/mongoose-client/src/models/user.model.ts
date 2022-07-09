@@ -1,16 +1,14 @@
+import { randomUUID } from "crypto";
+
 import { model, Schema } from "mongoose";
 
 const userProperties = {
-  id: String,
+  _id: { type: String, default: randomUUID },
+  email: { type: String, required: true },
+  hash: { type: String, required: true },
   name: String,
-  email: String,
-  hash: String,
 };
-const schemaOptions = {
-  strict: false,
-  timestamps: { createdAt: "createdDate", updatedAt: "updatedDate" },
-};
-const userSchema = new Schema(userProperties, schemaOptions);
+const userSchema = new Schema(userProperties);
 
 const User = model("User", userSchema);
 

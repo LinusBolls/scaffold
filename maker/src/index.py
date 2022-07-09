@@ -28,7 +28,7 @@ class Project():
   def __init__(self):
     pass
 
-TEMPLATE_PATH = "/users/linusbolls/templates"
+TEMPLATE_PATH = "/users/linusbolls/projects/scaffold/templates"
 
 def get_files(path):
   f = []

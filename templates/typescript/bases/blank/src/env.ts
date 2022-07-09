@@ -19,7 +19,7 @@ const EnvZod = z.object({
 function getEnvSrc() {
   const { error, parsed } = config();
 
-  if (error || parsed == null) return process.env;
+  if (error || parsed == null) return process.env as { [key: string]: string };
 
   return parsed;
 }
@@ -39,7 +39,7 @@ function validateEnv(env: { [key: string]: any }) {
   if (!parsedEnv.success)
     throw new Error(
       "Failed to Parse Environment Variables: " +
-        JSON.stringify((parsedEnv as any).error.issues, null, 2)
+        JSON.stringify(parsedEnv.error.issues, null, 2)
     );
 
   return parsedEnv.data;
