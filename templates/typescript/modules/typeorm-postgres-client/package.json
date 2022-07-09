@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "typeorm": "0.3.7",
+    "reflect-metadata": "^0.1.13",
+    "pg": "^8.4.0"
+  },
+  "scripts": {
+    "typeorm": "typeorm-ts-node-commonjs"
+  }
+}
