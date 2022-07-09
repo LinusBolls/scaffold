@@ -54,7 +54,7 @@ class NewUserInput {
 class UserResolver {
   @Query((returns) => User)
   async user(@Arg("id") id: string) {
-    return userController.get(id);
+    return userController.getById(id);
   }
 
   // @Query((returns) => [Recipe])

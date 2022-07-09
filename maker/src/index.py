@@ -28,7 +28,7 @@ class Project():
   def __init__(self):
     pass
 
-TEMPLATE_PATH = "/users/linusbolls/projects/scaffold/templates"
+TEMPLATE_PATH = path.join(Path(__file__).parent.resolve(), "../../templates")
 
 def get_files(path):
   f = []
@@ -94,7 +94,6 @@ class Project_Settings():
       print(f"error: {t_path} already exists")
       exit(1)
     
-    # path.join(getcwd(), args.path)
     return t_path
 
   def resolve_lang(self):
